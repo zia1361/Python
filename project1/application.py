@@ -11,8 +11,8 @@ import requests
 app = Flask(__name__)
 
 # Check for environment variable
-if not os.getenv("DATABASE_URL"):
-    raise RuntimeError("DATABASE_URL is not set")
+# if not os.getenv("DATABASE_URL"):
+#     raise RuntimeError("DATABASE_URL is not set")
 
 # Configure session to use filesystem
 app.config["SESSION_PERMANENT"] = False
@@ -20,7 +20,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Set up database
-engine = create_engine(os.getenv("DATABASE_URL"))
+engine = create_engine("postgres://zyqwlztajytvod:78db12e0d8ca64d8845c773b7a2dc37a801aefddd8f05ee0907b9b3a769cb615@ec2-3-229-210-93.compute-1.amazonaws.com:5432/d9t1b56ooec3um")
 db = scoped_session(sessionmaker(bind=engine))
 
 
