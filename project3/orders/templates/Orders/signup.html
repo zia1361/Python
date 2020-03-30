@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+    </head>
+    <body>
+        <h2>Sign up</h2>
+        <form class="container" action="{%url 'signup' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group ">
+              <label for="exampleInputEmail1" class="label label-default">UserName</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="username"  placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </body>
+</html>
